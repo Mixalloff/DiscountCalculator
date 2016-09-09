@@ -56,7 +56,9 @@
          * Применение скидки
          */
         function applyDiscount() {
-            if (!vm.totalDiscount || vm.totalDiscount > vm.amount) return;
+            if (!vm.totalDiscount || vm.totalDiscount > vm.amount) {
+                vm.totalDiscount = vm.amount;
+            }
             calculateProductsDiscount();
         }
     }

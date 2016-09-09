@@ -50,7 +50,7 @@
                         <tr md-row ng-repeat="product in cart.products" class="cart__table__body_row cart__table__row">
                             <td md-cell class="cart__table__body__cell cart__table__cell">{{ product.name }}</td>
                             <td md-cell class="cart__table__body__cell cart__table__cell">{{ product.price }}</td>
-                            <td md-cell class="cart__table__body__cell cart__table__cell">{{ product.price - product.discount || product.price}} <span> (-{{ product.discount || 0 }} руб.)</span></td>
+                            <td md-cell class="cart__table__body__cell cart__table__cell">{{ product.price - product.discount || 0 }} <span> (-{{ product.discount || 0 }} руб.)</span></td>
                         </tr>
                     </tbody>
                 </table>
