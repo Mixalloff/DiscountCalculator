@@ -19,6 +19,8 @@
          * @param {any} price Стоимость
          */
         function addProduct(name, price) {
+            if (!name || !price) return;
+            price = Math.round(price);
             var newProduct = {
                 name: name,
                 price: price
@@ -56,9 +58,10 @@
          * Применение скидки
          */
         function applyDiscount() {
-            if (!vm.totalDiscount || vm.totalDiscount > vm.amount) {
+            if (!vm.totalDiscount && vm.totalDiscount !== 0) {
                 vm.totalDiscount = vm.amount;
             }
+            vm.totalDiscount = Math.round(vm.totalDiscount);
             calculateProductsDiscount();
         }
     }
